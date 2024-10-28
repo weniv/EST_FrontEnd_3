@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <!-- file:///C:/Users/paullab/Desktop/pre/013.html?%ED%95%99%EB%B2%88=hello&%EC%9D%B4%EB%A6%84=world -->
+    <!-- ? 뒤에를 쿼리 스트링이라고 합니다. -->
+    <!-- 그리고 지금 한번이라는 텍스트가 없어지고 '%ED%95%99%EB%B2%88'이런 텍스트가 들어왔는데요! 이거를 URL 인코딩이라고 부릅니다. 안전하게 데이터를 보내기 위해서 특수문자나 띄어쓰기, 한글 등을 전송하기 좋은 데이터로 바꿔주는 것입니다.  -->
+    <form action="" method="GET">
+        <!-- action은 보낼 곳! 비어있으면 나에게 보내요! -->
+        <!-- 
+            method는 보내는 방식입니다! GET과 POST가 있어요.
+
+            GET은 옆서를 보내는 방식이라고 생각해주시면 좋습니다. 가벼운 데이터를 보낼 때 사용합니다. 누구든지 도청할 수 있습니다. 
+
+            POST는 택배 상자에 넣어서 보내는 것입니다. 주로 무거운 데이터나 데이터를 남에게 보여주고 싶지 않을 때 사용합니다.
+        -->
+            <input type="text" name="학번">
+            <input type="text" name="이름">
+            <input type="submit" value="전송">
+    </form>
+</body>
+</html>

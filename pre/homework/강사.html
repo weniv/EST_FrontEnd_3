@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 검색창 만들기</title>
+</head>
+<body>
+    <!-- Skip Navigation, Direct-link -->
+    <nav class="skip-nav">
+        <ul>
+            <li><a href="#">상단영역 바로가기</a></li>
+            <li><a href="#">서비스 메뉴 바로가기</a></li>
+            <li><a href="#">새소식 블록 바로가기</a></li>
+            <li><a href="#">쇼핑 블록 바로가기</a></li>
+        </ul>
+    </nav>
+    <!-- //skip Navigation, Direct-link -->
+
+    <!-- header -->
+    <header>
+        <h1>
+            <a href="">
+                <!-- 
+                스크린 리더 입장에서 어떤 alt를 사용하는 것이 맞을까? 
+                    1. alt가 없으면 경로명
+                    2. alt가 있으면 alt
+                    3. alt가 있으면서 ""이면 스크린리더가 읽지 않고 넘어감
+                -->
+                <img src="" alt="NAVER">
+                <span class="a11y-hidden">NAVER</span>
+                <!-- Naver는 Blind라는 class를 사용합니다. -->
+                <!-- Daum은 screen_out class를 사용합니다. -->
+            </a>
+        </h1>
+        <form>
+            <label for="search-input" class="sr-only">검색어 입력</label>
+            <input type="search" id="search-input" placeholder="검색어를 입력해 주세요">
+            <button type="submit">검색</button>
+        </form>
+    </header>
+    <!-- //header -->
+
+    <!-- main -->
+    <main>
+        <nav>
+            <ul>
+                <li><a href="#">메일</a></li>
+                <li><a href="#">카페</a></li>
+                <li><a href="#">블로그</a></li>
+                <li><a href="#">쇼핑</a></li>
+                <li><a href="#">뉴스</a></li>
+                <li><a href="#">증권</a></li>
+                <li><a href="#">부동산</a></li>
+                <li><a href="#">지도</a></li>
+                <li><a href="#">웹툰</a></li>
+                <li><a href="#">차지직</a></li>
+                <li><a href="#">더보기</a></li>
+            </ul>
+        </nav>
+        
+
+        <!-- 로그인 섹션 -->
+        <section>
+            <h2>로그인</h2>
+            <p>네이버를 더 안전하고 편리하게 이용하세요</p>
+            <button type="button">NAVER 로그인</button>
+            <nav>
+                <ul>
+                    <li><a href="#">아이디 찾기</a></li>
+                    <li><a href="#">비밀번호 찾기</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </nav>
+        </section>
+        <!-- //로그인 섹션 -->
+
+        <!-- 주요 알람 섹션 -->
+        <section>
+            <h2>주요 알람</h2>
+            <ul>
+                <li><a href="#">💬</a></li>
+                <li><a href="#">🔔</a></li>
+                <li><a href="#">👜</a></li>
+            </ul>
+        </section>
+        <!-- //주요 알람 섹션 -->
+    </main>
+    <!-- //main -->
+</body>
+</html>

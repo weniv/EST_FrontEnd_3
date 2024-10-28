@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+    <!-- 중복되는 것은 피드백 드리지 않겠습니다. -->
+    <!-- div가 너무 많습니다. -->
+    <div>
+        <!-- form을 안써서 감점 -->
+        <input type="text">
+        <button type="submit">검색</button>
+    </div>
+    <div>
+        <ul>
+            <!-- 
+                ul 안에는 li가 들어가야 합니다. 
+                다른 요소는 올 수 없어요. 
+            -->
+            <span>
+                <a href="https://mail.naver.com/">메일</a>
+            </span>
+            <span>
+                <a href="https://cafe.naver.com/">카페</a>
+            </span>
+            <span>
+                <a href="https://blog.naver.com/">블로그</a>
+            </span>
+            <span>
+                <a href="https://shopping.naver.com/">쇼핑</a>
+            </span>
+            <span>
+                <a href="https://news.naver.com/">뉴스</a>
+            </span>
+            <span>
+                <a href="https://finance.naver.com/">증권</a>
+            </span>
+            <span>
+                <a href="https://land.naver.com/">부동산</a>
+            </span>
+            <span>
+                <a href="https://map.naver.com/">지도</a>
+            </span>
+            <span>
+                <a href="https://comic.naver.com/">웹툰</a>
+            </span>
+            <span>
+                <a href="https://chzzk.naver.com/">치지직</a>
+            </span>
+            <!-- 
+                아마도 글자가 이렇게 되어 있어서 이렇게 하신 것 같은데
+                '...'으로 되어 있어도 '...'으로 작성하지 않습니다.
+                스크린리더도 점점점으로 읽습니다.
+            -->
+            <span>...</span>
+        </ul>
+    </div>
+    <div>
+        <!-- 
+            div가 너무 많아요.
+            => 시멘틱한 마크업을 짜지 못했다!
+        -->
+        <div>
+            네이버를 더 안전하게 이용하세요
+        </div>
+        <button type="submit">로그인</button>
+        <div>
+            <!-- span, div 모두 최후의 수단입니다! -->
+            <span>
+                <a href="https://nid.naver.com/user2/help/idInquiry?lang=ko_KR">아이디 찾기</a>
+            </span>
+            <span>
+                <a href="https://nid.naver.com/user2/help/pwInquiry?lang=ko_KR">비밀번호 찾기</a>
+            </span>
+            <span>
+                <a href="https://nid.naver.com/user2/join/agree?lang=ko_KR&realname=">회원가입</a>
+            </span>
+        </div>
+    </div>
+</body>
+</html>
