@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        h1 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- CSS 렌더링 순서와 관련이 있습니다. -->
+    <!-- 이거는 제가 유용한 정보방에 영상 하나 드렸습니다. -->
+    <!-- 이유는 HTML과 CSS가 순차 적용이 아닙니다! -->
+    <!-- 브라우저는 이 2개를 별도로 읽습니다.  -->
+    <style>
+        h1 {
+            color: blue;
+        }
+    </style>
+    <h1>hello world</h1>
+    <style>
+        h1 {
+            color: green;
+        }
+    </style>
+    <h1>hello world</h1>
+</body>
+</html>

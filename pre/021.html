@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        html {
+            font-size: 32px;
+        }
+        .one {
+            /* 절대값 */
+            font-size: 32px;
+        }
+        .two {
+            /* 부모에 font-size 배수 */
+            font-size: 2em;
+        }
+        .three {
+            /* 문서에(html) font-size에 배수 */
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- html은 16px이 기본입니다. -->
+    hello world body
+    <div class="one">
+        hello world
+        <div class="one">hello world</div>
+    </div>
+    <div class="two">
+        hello world
+        <div class="two">hello world</div>
+    </div>
+    <div class="three">
+        hello world
+        <div class="three">hello world</div>
+    </div>
+</body>
+</html>
