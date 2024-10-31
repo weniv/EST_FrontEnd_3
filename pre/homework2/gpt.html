@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRIDFLEX</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header 스타일 */
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem;
+            border-bottom: 1px solid #ccc;
+        }
+
+        /* 네비게이션 영역 */
+        .header-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .site-logo {
+            margin-right: 2rem;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+        }
+
+        li {
+            width: 100px;
+            margin-right: 1.25rem;
+        }
+
+        .primary-nav a {
+            text-decoration: none;
+            color: black;
+            padding-bottom: 0.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .primary-nav a:hover {
+            font-weight: 900;
+            border-bottom: 3px solid blue;
+        }
+
+        /* 프로필 이미지 */
+        .user-profile {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* 메인 콘텐츠 영역 */
+        .main-content {
+            margin-top: 1.25rem;
+            padding: 0 1.25rem;
+        }
+
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .gallery-row {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gallery-item img {
+            width: 250px;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 프롬프트: 아래 html을 좀 더 시멘틱하게 변경해줘. -->
+    <header class="page-header">
+        <div class="header-nav">
+            <h1 class="site-logo">GRIDFLEX</h1>
+            <nav class="primary-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">강의</a></li>
+                    <li><a href="#">도서</a></li>
+                    <li><a href="#">Top10</a></li>
+                </ul>
+            </nav>
+        </div>
+        <img class="user-profile" src="https://picsum.photos/64" alt="사용자 프로필 이미지">
+    </header>
+
+    <main class="main-content">
+        <section class="gallery">
+            <ul class="gallery-row">
+                <li>
+                    <article class="gallery-item">
+                        <img src="333253.png" alt="갤러리 이미지">
+                    </article>
+                </li>
+                <li>
+                    <article class="gallery-item">
+                        <img src="333253.png" alt="갤러리 이미지">
+                    </article>
+                </li>
+                <li>
+                    <article class="gallery-item">
+                        <img src="333253.png" alt="갤러리 이미지">
+                    </article>
+                </li>
+                <li>
+                    <article class="gallery-item">
+                        <img src="333253.png" alt="갤러리 이미지">
+                    </article>
+                </li>
+                <li>
+                    <article class="gallery-item">
+                        <img src="333253.png" alt="갤러리 이미지">
+                    </article>
+                </li>
+            </ul>
+            <ul class="gallery-row">
+                <li>
+                    <article class="gallery-item">
+                        <img src="333253.png" alt="갤러리 이미지">
+                    </article>
+                </li>
+                <li>
+                    <article class="gallery-item">
+                        <img src="333253.png" alt="갤러리 이미지">
+                    </article>
+                </li>
+                <li>
+                    <article class="gallery-item">
+                        <img src="333253.png" alt="갤러리 이미지">
+                    </article>
+                </li>
+                <li>
+                    <article class="gallery-item">
+                        <img src="333253.png" alt="갤러리 이미지">
+                    </article>
+                </li>
+                <li>
+                    <article class="gallery-item">
+                        <img src="333253.png" alt="갤러리 이미지">
+                    </article>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

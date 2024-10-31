@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- 
+        justify-content 주축 정렬
+        align-items 교차축 정렬  
+    -->
+    <style>
+        .container {
+            height: 500px;
+            display: flex;
+            /* justify-content: space-between; */
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .item {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            display: flex;
+        }
+        .item:last-child {
+            width: 500px;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <!-- flex는 가로배치, 세로배치 -->
+    <div class="container">
+        <div class="item">logo</div>
+        <div class="item">
+            <div>menu1</div>
+            <div>menu2</div>
+            <div>menu3</div>
+        </div>
+    </div>
+</body>
+</html>

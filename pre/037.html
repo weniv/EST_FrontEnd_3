@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-areas:
+                'header header header'
+                'left center right' 
+                'footer footer footer';
+            gap: 10px;
+            height: 300px;
+        }
+
+        #header {
+            grid-area: header;
+            background-color: skyblue;
+        }
+
+        #left {
+            grid-area: left;
+            background-color: skyblue;
+        }
+
+        #center {
+            grid-area: center;
+            background-color: skyblue;
+        }
+
+        #right {
+            grid-area: right;
+            background-color: skyblue;
+        }
+
+        #footer {
+            grid-area: footer;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="header">header</div>
+        <div id="left">left</div>
+        <div id="center">center</div>
+        <div id="right">right</div>
+        <div id="footer">footer</div>
+    </div>
+</body>
+</html>

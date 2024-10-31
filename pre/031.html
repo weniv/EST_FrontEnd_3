@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .container {
+            display: flex;
+            /* 메뉴같은 것 배치할 때 */
+            /* flex-direction: row; */
+            /* Card 같은 것 배치할 때, 이미지, 이름, 가격, 제조사 */
+            flex-direction: column;
+            gap: 10px;
+        }
+        .item {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- flex는 가로배치, 세로배치 -->
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>

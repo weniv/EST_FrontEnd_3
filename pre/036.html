@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-areas:
+                'header header header'
+                'nav main main' 
+                'footer main main';
+            gap: 10px;
+            height: 300px;
+        }
+        
+        header {
+            grid-area: header;
+            background-color: #3498db;
+        }
+        nav {
+            grid-area: nav;
+            background-color: #2ecc71;
+        }
+        main {
+            grid-area: main;
+            background-color: #e74c3c;
+        }
+        footer {
+            grid-area: footer;
+            background-color: #f39c12;
+        }
+        
+        header,
+        nav,
+        main,
+        footer {
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>Header</header>
+        <nav>Nav</nav>
+        <main>Main</main>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>

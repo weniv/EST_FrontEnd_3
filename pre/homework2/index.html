@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        li {
+            width: 100px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        a:hover {
+            font-weight: 900;
+            border-bottom: 3px solid blue;
+        }
+        .container {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-direction: column;
+        }
+        .row {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .img-profile {
+            width: 64px;
+            border-radius: 50%;
+        }
+        img {
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+            <h1 class="logo">GRIDFLEX</h1>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">강의</a></li>
+                    <li><a href="#">도서</a></li>
+                    <li><a href="#">Top10</a></li>
+                </ul>
+            </nav>
+        </div>
+        <img class="img-profile" src="https://picsum.photos/64" alt="">
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="item"><img src="333253.png"></div>
+                <div class="item"><img src="333253.png"></div>
+                <div class="item"><img src="333253.png"></div>
+                <div class="item"><img src="333253.png"></div>
+                <div class="item"><img src="333253.png"></div>
+            </div>
+            <div class="row">
+                <div class="item"><img src="333253.png"></div>
+                <div class="item"><img src="333253.png"></div>
+                <div class="item"><img src="333253.png"></div>
+                <div class="item"><img src="333253.png"></div>
+                <div class="item"><img src="333253.png"></div>
+            </div>
+        </div>
+        
+    </main>
+</body>
+</html>

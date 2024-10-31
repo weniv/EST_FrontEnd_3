@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+
+        .one {
+            background-color: red;
+            display: block;
+        }
+
+        .two {
+            background-color: green;
+            display: inline;
+
+        }
+
+        .three {
+            background-color: blue;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <div class="one"></div>
+    <!-- hello를 빼면 요소가 없어진 것처럼 보입니다. 왜냐하면 line은 width, height를 조절할 수 없기 때문이에요! -->
+    <div class="two">hello</div>
+    <div class="two">hello</div>
+    <br>
+    <div class="three"></div>
+    <div class="three"></div>
+</body>
+</html>
