@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        @keyframes hojun {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(400px, 0) rotate(180deg);
+            }
+            50% {
+                transform: translate(400px, 400px) scale(2);
+            }
+            75% {
+                transform: translate(0, 400px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            background-color: green;
+            position: relative;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            /* animation: hojun 2s; */
+            animation: hojun 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- https://paullab.co.kr/codefestival.html -->
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>
