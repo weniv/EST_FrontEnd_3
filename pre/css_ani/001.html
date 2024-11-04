@@ -1,129 +1,26 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D 카드 인터랙션</title>
-    <style>
-        /* 전체 페이지 스타일링 */
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f0f0f0;
-            font-family: Arial, sans-serif;
-            perspective: 1000px; /* 3D 효과를 위한 원근감 설정 */
-        }
-
-        /* 카드 컨테이너 - 호버 효과의 기준점 */
-        .card {
-            width: 300px;
-            height: 400px;
-            position: relative;
-            transform-style: preserve-3d; /* 하위 요소들의 3D 변환 활성화 */
-            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* 부드러운 변환 효과 */
-            cursor: pointer;
-        }
-
-        /* 카드 내부 콘텐츠 */
-        .card-content {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: white;
-            border-radius: 20px;
-            padding: 20px;
-            box-sizing: border-box;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1); /* 기본 그림자 */
-            transform-style: preserve-3d; /* 내부 요소들도 3D 효과 유지 */
-            transition: box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        /* 카드 내부 요소들 */
-        .card-title {
-            font-size: 24px;
-            margin-bottom: 10px;
-            transform: translateZ(50px); /* 텍스트를 카드 표면보다 앞으로 돌출 */
-        }
-
-        .card-image {
-            width: 100%;
-            height: 200px;
-            background: #ddd;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            transform: translateZ(30px); /* 이미지를 카드 표면보다 앞으로 돌출 */
-        }
-
-        .card-description {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.5;
-            transform: translateZ(40px); /* 설명 텍스트를 카드 표면보다 앞으로 돌출 */
-        }
-
-        /* 호버 시 그림자 강화 */
-        .card:hover .card-content {
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        /* 호버 시 발생하는 회전 애니메이션을 위한 클래스 */
-        /* 실제 회전은 JavaScript에서 계산하여 적용 */
-    </style>
+  <style>
+  @keyframes hojun {
+      from{
+          background-position: 0px, 0px;
+      }
+      to {
+          background-position: -3730px, 0;
+      }
+  }
+  .building1{
+      width: 110px;
+      height: 180px;
+      background: url('building1.png') no-repeat;
+      animation: hojun 5s steps(33);
+      /* animation: hojun 5s; */
+      animation-fill-mode: forwards;
+  }
+  </style>
 </head>
 <body>
-    <div class="card">
-        <div class="card-content">
-            <h2 class="card-title">인터랙티브 카드</h2>
-            <div class="card-image"></div>
-            <p class="card-description">
-                마우스를 움직여보세요! 카드가 마우스 위치에 따라 자연스럽게 회전합니다.
-                3D 변환과 그림자 효과로 실제 카드처럼 보입니다.
-            </p>
-        </div>
-    </div>
-
-    <script>
-        // 카드 요소 선택
-        const card = document.querySelector('.card');
-        
-        // 마우스 이동 이벤트에 대한 회전 효과 계산 및 적용
-        card.addEventListener('mousemove', (e) => {
-            // 카드의 위치 정보 가져오기
-            const rect = card.getBoundingClientRect();
-            
-            // 카드 중심점 계산
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            
-            // 마우스 위치와 중심점의 차이 계산
-            const deltaX = e.clientX - centerX;
-            const deltaY = e.clientY - centerY;
-            
-            // 회전 각도 계산 (마우스 위치에 따라 최대 15도까지 회전)
-            const rotateX = (-deltaY / (rect.height / 2)) * 15;
-            const rotateY = (deltaX / (rect.width / 2)) * 15;
-            
-            // 카드에 회전 변환 적용
-            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        });
-
-        // 마우스가 카드를 벗어날 때 원래 위치로 복귀
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'rotateX(0) rotateY(0)';
-        });
-
-        // 마우스가 카드에 들어올 때 트랜지션 효과 제거 (부드러운 움직임을 위해)
-        card.addEventListener('mouseenter', () => {
-            card.style.transition = 'none';
-        });
-
-        // 마우스가 카드를 벗어날 때 트랜지션 효과 복구
-        card.addEventListener('mouseleave', () => {
-            card.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
-        });
-    </script>
+  <div class="building1"></div>
 </body>
 </html>

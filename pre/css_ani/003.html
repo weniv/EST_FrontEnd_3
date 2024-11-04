@@ -2,175 +2,70 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로고 인트로 애니메이션</title>
+    <title>카드돌리기</title>
     <style>
-        /* 기본 스타일 */
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #1a1a1a;
-            font-family: 'Arial', sans-serif;
+        @keyframes 돌려돌려 {
+            from {
+                transform: rotateX(0);
+            }
+            to {
+                transform: rotateX(-360deg);
+            }
         }
 
-        /* 로고 컨테이너 */
-        .logo-container {
-            text-align: center;
+        .원본 {
             position: relative;
-        }
-
-        /* SVG 스타일링 */
-        .logo-svg {
             width: 200px;
             height: 200px;
-            margin-bottom: 20px;
+            border: solid 1px black;
+            perspective: 400px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
         }
 
-        /* SVG 패스 애니메이션 */
-        .logo-path {
-            fill: none;
-            stroke: #4CAF50;
-            stroke-width: 4;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: drawPath 2s ease forwards;
-        }
-
-        /* 로고 텍스트 스타일링 */
-        .logo-text {
-            color: white;
-            font-size: 2.5rem;
-            margin: 0;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.6s ease forwards;
-            animation-delay: 1.8s;
-        }
-
-        .tagline {
-            color: #888;
-            font-size: 1.2rem;
-            margin-top: 10px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.6s ease forwards;
-            animation-delay: 2s;
-        }
-
-        /* 애니메이션 키프레임 */
-        @keyframes drawPath {
-            to {
-                stroke-dashoffset: 0;
-            }
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* 로고 완성 후 호버 효과 */
-        .logo-container:hover .logo-path {
-            animation: glowPath 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes glowPath {
-            from {
-                stroke: #4CAF50;
-                filter: drop-shadow(0 0 2px #4CAF50);
-            }
-            to {
-                stroke: #69F0AE;
-                filter: drop-shadow(0 0 8px #69F0AE);
-            }
-        }
-
-        /* 재생 버튼 */
-        .replay-button {
+        .회전패널 {
+            /* transform-origin: left; */
+            /* transform-origin: top; -> x축 이동 */
+            /* transform-origin: top right; */
+            transform-origin: bottom;
             position: absolute;
-            bottom: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 10px 20px;
-            background: transparent;
-            border: 2px solid #4CAF50;
-            color: #4CAF50;
-            border-radius: 25px;
-            cursor: pointer;
-            opacity: 0;
-            animation: fadeIn 0.6s ease forwards;
-            animation-delay: 2.5s;
-            transition: all 0.3s ease;
+            font-size: 32px;
+            width: 200px;
+            height: 200px;
+            animation: 돌려돌려 20s;
+            transform-style: preserve-3d;
         }
 
-        .replay-button:hover {
-            background: #4CAF50;
-            color: white;
-            transform: translateX(-50%) scale(1.05);
+        .회전패널앞 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: violet;
+            backface-visibility: hidden;
         }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
+        .회전패널뒤 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: chocolate;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
         }
     </style>
 </head>
 <body>
-    <div class="logo-container">
-        <svg class="logo-svg" viewBox="0 0 100 100">
-            <!-- 육각형 로고 패스 -->
-            <path class="logo-path" d="M50 10 L80 25 L80 75 L50 90 L20 75 L20 25 Z">
-            </path>
-            <!-- 내부 디테일 -->
-            <path class="logo-path" d="M50 10 L50 90">
-            </path>
-            <path class="logo-path" d="M20 25 L80 75">
-            </path>
-            <path class="logo-path" d="M80 25 L20 75">
-            </path>
-        </svg>
-        <h1 class="logo-text">HEXAGON</h1>
-        <p class="tagline">Design & Innovation</p>
-        <button class="replay-button">Replay Animation</button>
+    <div class="원본">
+        <div class="회전패널">
+            <div class="회전패널앞">앞</div>
+            <div class="회전패널뒤">뒤</div>
+        </div>
     </div>
-
-    <script>
-        // 애니메이션 재생 함수
-        function replayAnimation() {
-            // 모든 패스 선택
-            const paths = document.querySelectorAll('.logo-path');
-            const text = document.querySelector('.logo-text');
-            const tagline = document.querySelector('.tagline');
-            
-            // 애니메이션 초기화를 위해 요소들을 복제하고 교체
-            paths.forEach(path => {
-                const newPath = path.cloneNode(true);
-                path.parentNode.replaceChild(newPath, path);
-            });
-
-            // 텍스트 요소들 초기화
-            const newText = text.cloneNode(true);
-            const newTagline = tagline.cloneNode(true);
-            text.parentNode.replaceChild(newText, text);
-            tagline.parentNode.replaceChild(newTagline, tagline);
-        }
-
-        // 재생 버튼 이벤트 리스너
-        document.querySelector('.replay-button').addEventListener('click', replayAnimation);
-
-        // 로딩 시 자동 재생
-        window.addEventListener('load', () => {
-            // 페이지 로드 시 약간의 지연 후 애니메이션 시작
-            setTimeout(replayAnimation, 200);
-        });
-    </script>
 </body>
 </html>

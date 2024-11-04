@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 기반 애니메이션</title>
+    <style>
+        /* 기본 스타일 리셋 및 전체 레이아웃 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        /* 헤더 스타일링 */
+        header {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #6b48ff, #ff4873);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        /* 컨텐츠 섹션 스타일링 */
+        .content-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 애니메이션 카드 스타일링 */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            opacity: 0; /* 초기에는 투명 */
+            transform: translateY(50px); /* 초기 위치는 아래로 50px */
+            transition: 
+                opacity 0.6s ease-out,
+                transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* 다양한 방향에서 나타나는 효과를 위한 클래스들 */
+        .from-left {
+            transform: translateX(-100px);
+        }
+
+        .from-right {
+            transform: translateX(100px);
+        }
+
+        .from-bottom {
+            transform: translateY(100px);
+        }
+
+        .scale-up {
+            transform: scale(0.8);
+        }
+
+        /* 요소가 화면에 나타날 때 적용될 클래스 */
+        .visible {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+
+        /* 카드 내부 스타일링 */
+        .card h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>스크롤 애니메이션</h1>
+            <p>아래로 스크롤하여 다양한 애니메이션을 확인하세요</p>
+        </div>
+    </header>
+
+    <section class="content-section">
+        <!-- 왼쪽에서 나타나는 카드 -->
+        <div class="card from-left">
+            <h2>왼쪽에서 등장</h2>
+            <p>이 카드는 왼쪽에서 부드럽게 슬라이드되어 나타납니다.</p>
+        </div>
+
+        <!-- 오른쪽에서 나타나는 카드 -->
+        <div class="card from-right">
+            <h2>오른쪽에서 등장</h2>
+            <p>이 카드는 오른쪽에서 부드럽게 슬라이드되어 나타납니다.</p>
+        </div>
+
+        <!-- 아래에서 나타나는 카드 -->
+        <div class="card from-bottom">
+            <h2>아래에서 등장</h2>
+            <p>이 카드는 아래에서 위로 부드럽게 올라옵니다.</p>
+        </div>
+
+        <!-- 확대되면서 나타나는 카드 -->
+        <div class="card scale-up">
+            <h2>확대 등장</h2>
+            <p>이 카드는 작은 크기에서 확대되면서 나타납니다.</p>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer 설정
+        const options = {
+            root: null, // viewport를 root로 사용
+            rootMargin: '0px', // viewport의 경계선
+            threshold: 0.1 // 10%가 보이면 콜백 실행
+        };
+
+        // 관찰자 생성
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // 요소가 화면에 나타날 때
+                if (entry.isIntersecting) {
+                    // visible 클래스 추가하여 애니메이션 실행
+                    entry.target.classList.add('visible');
+                    
+                    // 한 번 나타난 요소는 더 이상 관찰하지 않음
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        // 모든 카드 요소들을 관찰 대상으로 등록
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // 스크롤 위치에 따른 페이드 효과
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrolled = window.scrollY;
+            
+            // 스크롤 위치에 따라 헤더 투명도 조절
+            if (scrolled > 0) {
+                header.style.opacity = Math.max(1 - scrolled/500, 0);
+            }
+        });
+
+        // 페이지 로드 시 첫 번째 요소들 애니메이션
+        window.addEventListener('load', () => {
+            document.querySelector('.header-content').classList.add('visible');
+        });
+    </script>
+</body>
+</html>
