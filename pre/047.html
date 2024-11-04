@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* 미디어 쿼리: 화면 너비가 768px 이하일 때 적용 */
+        @media screen and (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger svg {
+                stroke: #333;
+            }
+    
+            .hamburger svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header에 로고, about, product, contact 4개의 배치가 있는 UI에서 미디어 쿼리를 이용하여 모바일이 되었을 때 로고와 햄버거 버튼만 있는 UI로 변하는 html을 작성하세요. -->
+    <header>
+        <div class="logo">Logo</div>
+        <nav class="nav-menu">
+            <a href="#">About</a>
+            <a href="#">Product</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="hamburger">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </div>
+    </header>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>print</title>
+    <style>
+        /* 프린트 할 때에는 two만 보이게 수정 */
+        @media print {
+            .one {
+                display: none;
+            }
+            .three {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="one">hello world 1</div>
+    <div class="two">hello world 2</div>
+    <div class="three">hello world 3</div>
+</body>
+</html>

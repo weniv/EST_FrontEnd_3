@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .menu {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            top: -50px;
+            left: 0px;
+            transition: all 2s;
+        }
+        .menu:hover {
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 메뉴가 위에서부터 아래로 내려오는 원리 -->
+    <div class="header">
+        <div class="menu">box</div>
+    </div>
+</body>
+</html>
