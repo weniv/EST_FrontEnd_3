@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img.one {
+            position: absolute;
+        }
+        img.two {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <!-- 둘 다 absolute로 들어가 있으면 마지막에 온 요소가 맨 앞으로 옵니다. -->
+    <!-- 하나만 absolute로 들어가 있으면 해당 속성을 가진 요소가 맨 앞으로 옵니다. -->
+    <div>
+        <img class="one" src="img/licat.png" alt="">
+        <img class="two" src="img/title.png" alt="">
+    </div>
+</body>
+</html>

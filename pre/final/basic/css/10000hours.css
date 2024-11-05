@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'OTEnjoystoriesBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2") format('woff2'),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff") format('woff'),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf") format('opentype');
+}
+
+.a11y-hidden {
+    clip: rect(1px,1px,1px,1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'GmarketSansMedium';
+    background-color: #662D91;
+    color: white;
+}
+
+/* header */
+header {
+    margin-top: 120px;
+    margin-bottom: 52px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 .img-clock {
+    width: 261px;
+}
+
+h1 .img-title {
+    position: absolute;
+    width: 564px;
+    height: auto;
+}
+/* //header */
+
+/* main */
+.intro-saying {
+    font-family: "OTEnjoystoriesBA";
+    font-size: 36px;
+    color: #F5DF4D;
+    margin-bottom: 80px;
+}
+
+.sec-intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-quotes {
+    position: absolute;
+}
+
+.explain {
+    text-align: center;
+    line-height: 1.7;
+}
+
+.explain strong {
+    font-family: 'GmarketSansBold';
+    font-size: 20px;
+}
+/* //main */
